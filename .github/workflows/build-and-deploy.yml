@@ -26,8 +26,10 @@ jobs:
 
           - name: 'Build Inventory Image'
             run: |
-              podman build . --tag ghcr.io/bshephar/fedora-bootc:rawhide
-              podman push ghcr.io/bshephar/fedora-bootc:rawhide
+              podman build -f Containerfile-kinoite --tag ghcr.io/bshephar/fedora-bootc:rawhide-kinoite
+              podman build -f Containerfile-silverblue --tag ghcr.io/bshephar/fedora-bootc:rawhide-silverblue
+              podman push ghcr.io/bshephar/fedora-bootc:rawhide-kinoite
+              podman push ghcr.io/bshephar/fedora-bootc:rawhide-silverblue
 
 
 
