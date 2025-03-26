@@ -5,12 +5,13 @@ FROM quay.io/fedora-ostree-desktops/kinoite:${FEDORA_MAJOR_VERSION}
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
 RUN curl -s -o /etc/yum.repos.d/tailscale.repo https://pkgs.tailscale.com/stable/centos/9/tailscale.repo
-#RUN dnf group install gnome-desktop base-graphical container-management core fonts hardware-support multimedia networkmanager-submodules printing workstation-product -y
+RUN dnf group install gnome-desktop base-graphical container-management core fonts hardware-support multimedia networkmanager-submodules printing workstation-product -y
 
 #RUN bash <(curl -sSf https://raw.githubusercontent.com/bshephar/fedora-sb/main/nordvpn-install.sh)
 
 RUN dnf in -y alacritty \
               fedpkg \
+              distrobox \
               rust \
               gdb \
               glib \
