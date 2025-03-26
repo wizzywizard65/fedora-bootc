@@ -1,6 +1,6 @@
 ARG FEDORA_MAJOR_VERSION=rawhide
 
-FROM quay.io/fedora-ostree-desktops/kinoite:${FEDORA_MAJOR_VERSION}
+FROM quay.io/fedora-ostree-desktops/silverblue:${FEDORA_MAJOR_VERSION}
 
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
